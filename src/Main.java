@@ -1,3 +1,4 @@
+// TODO detail comment
 /**
  * Main
  * 
@@ -6,6 +7,7 @@
  */
 public class Main
 {
+	// TODO fix comment (what is the purpose of args?)
 	/**
 	 * start a new game
 	 * 
