@@ -1,21 +1,21 @@
-// TODO detail comment (done)
+// TODO update README.md (what/who)
+
 /**
- * Launch the application
+ * Application that launches a Labyrinth game
  * 
  * @author pasquiop
  *
  */
 public class Main
 {
-    // TODO fix comment (what is the purpose of args?)(done)
-    /**
-     * start a new game
-     * 
-     * @param args
-     *            given at the launch of the application
-     */
-    public static void main(String[] args)
-    {
-        new MazeGame().play();
-    }
+	/**
+	 * Application's main
+	 * 
+	 * @param args
+	 *            command-line arguments (unused)
+	 */
+	public static void main(String[] args)
+	{
+		new MazeGame().play();
+	}
 }

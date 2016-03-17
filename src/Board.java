@@ -8,30 +8,28 @@
 public class Board
 {
     /**
-     * number of column (constant)
+     * number of columns
      */
-    private static final int NB_COLUMN = 7;
+    private static final int NB_COLUMNS = 7;
     /**
-     * number of row (constant)
+     * number of rows
      */
-    private static final int NB_ROW = 7;
-    // TODO fix comment (see MazeGame)(done)
-    /**
+    private static final int NB_ROWS = 7;
+    
+	// TODO fix comment (ask for advice)
+     /**
      * attribute (array) containing the board with the tiles
      */
     private Tile[][] board;
 
-    // TODO clean comment (board...board) (done)
     /**
-     * create the default board, where mobile cards are placed randomly
+     * create a new default board, where mobile cards are placed randomly
      */
     public Board()
     {
-        // TODO rename local variables(done)
-        // TODO declare constants(done)
-        for (int row = 0; row < NB_ROW; row++)
+        for (int row = 0; row < NB_ROWS; row++)
         {
-            for (int column = 0; column < NB_COLUMN; column++)
+            for (int column = 0; column < NB_COLUMNS; column++)
             {
                 switch (row)
                 {
@@ -109,4 +107,6 @@ public class Board
             }
         }
     }
+    
+    // TODO override toString to display an ascii-art representation of the board
 }
