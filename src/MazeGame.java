@@ -1,14 +1,14 @@
-// TODO fix comment (what this class represents?)
+// TODO fix comment (what this class represents?)(done)
 
 /**
- * This class is used to start a new game
+ * This class represents a game of Labyrinth
  * 
  * @author pasquiop
  *
  */
 public class MazeGame
 {
-	
+
 	/**
 	 * the game board
 	 */
@@ -26,14 +26,13 @@ public class MazeGame
 
 	// TODO detail algorithm (ask for advice)
 	/**
-	 * Play the game.  
-	 * Every players push a tile when it's their turn, and move
+	 * Play the game. Every players push a tile when it's their turn, and move
 	 * their piece where they can walk)
 	 */
 	public void play()
 	{
 		System.out.println("La partie commence.");
-
+		System.out.println(this.board.toString());
 		System.out.println("La partie est finie.");
 	}
 }

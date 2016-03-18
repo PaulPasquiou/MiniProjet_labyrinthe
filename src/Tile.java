@@ -1,72 +1,31 @@
 // TODO clean comment (not really clear)
 /**
- * it's tile of the board of the game 50 tiles
+ * it represents tiles, it's featured by a shape, a rotation and an eventual item
  * 
  * @author pasquiop
  *
  */
 public class Tile
 {
-	
-	// TODO consider using enumerations
-	
-	// TODO write comment
-	/**
-	 * 
-	 */
-	public static final int ROTATION_0 = 0;
 
-	// TODO write comment
-	/**
-	 * 
-	 */
-	public static final int ROTATION_90 = 1;
-	// TODO
-	/**
-	 * 
-	 */
-	public static final int ROTATION_180 = 2;
-	// TODO
-	/**
-	 * 
-	 */
-	public static final int ROTATION_270 = 3;
-	
-	// TODO fix comment (ask for advice)
-	/**
-	 * constant which shows that the tile has a shape in T
-	 */
-	public static final int T_SHAPE = 0;
-
-	/// TODO fix comment (ask for advice)
-	/**
-	 * constant which shows that the tile has a shape in L
-	 */
-	public static final int L_SHAPE = 1;
-
-	// TODO fix comment (ask for advice)
-	/**
-	 * constant which shows that the tile has a shape in I
-	 */
-	public static final int I_SHAPE = 2;
 
 	// TODO fix comment (ask for advice)
 	/**
 	 * attribute which gives us the shape of the tile
 	 */
-	private int shape;
+	private Shape shape;
 
 	// TODO fix comment (ask for advice)
 	/**
 	 * attribute which gives us the id of items on the tile
 	 */
-	private int item;
+	private Treasure item;
 
 	// TODO fix comment (ask for advice)
 	/**
 	 * attribute which gives us the orientation of the tile
 	 */
-	private int rotation;
+	private Rotation rotation;
 
 	// TODO detail comment (how is the created tile)
 	/**
@@ -79,10 +38,15 @@ public class Tile
 	 * @param rotation0
 	 *            the rotation of the tile
 	 */
-	public Tile(int shape0, int item0, int rotation0)
+	public Tile(Shape shape0, Treasure item0, Rotation rotation0)
 	{
 		this.shape = shape0;
 		this.item = item0;
 		this.rotation = rotation0;
+	}
+
+	public String toString(int line)
+	{
+		return "(" + this.shape + "," + this.rotation + "," + this.item + ")";
 	}
 }
