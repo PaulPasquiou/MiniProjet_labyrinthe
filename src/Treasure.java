@@ -4,10 +4,11 @@
  */
 public enum Treasure
 {
-	//TODO conplete the list....
+	//TODO complete the list....
 	/**
 	 * 
 	 */
+    PLAYER,
 	BOOK,
 	PURSE,
 	MAP,
