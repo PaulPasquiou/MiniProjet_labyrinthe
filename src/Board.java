@@ -1,4 +1,3 @@
-// TODO fix comment (ask for advice)(done)
 /**
  * Board of the game . grid 7x7 . 16 fixed tiles . 49 tiles on the board.
  * 
@@ -16,7 +15,6 @@ public class Board
      */
     private static final int NB_ROWS = 7;
 
-    // TODO fix comment (ask for advice)(done)
     /**
      * (array) containing the tiles [row][column]
      */
@@ -109,9 +107,9 @@ public class Board
         }
     }
 
-    // TODO override toString to display an ascii-art representation of
-    // the(done)
-    // board(done)
+    /**
+     * @see java.lang.Object#toString()
+     */
     public String toString()
     {
         String result = null;

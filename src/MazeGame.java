@@ -1,5 +1,3 @@
-// TODO fix comment (what this class represents?)(done)
-
 /**
  * This class represents a game of Labyrinth
  * 

@@ -1,4 +1,3 @@
-// TODO update README.md (what/who)(done)
 
 /**
  * Application that launches a Labyrinth game

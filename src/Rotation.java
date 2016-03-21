@@ -6,27 +6,22 @@
  */
 public enum Rotation
 {
-	// TODO consider using enumerations(done)
-
-	// TODO write comment(done)
+	// TODO fix text encoding
 	/**
-	 * Default rotation for tiles 0°
+	 * Default rotation for tiles 0ï¿½
 	 */
 	ROTATION_0,
 
-	// TODO write comment(done)
 	/**
-	 * rotation for tiles 90°
+	 * rotation for tiles 90ï¿½
 	 */
 	ROTATION_90,
-	// TODO(done)
 	/**
-	 * rotation for tiles 180°
+	 * rotation for tiles 180ï¿½
 	 */
 	ROTATION_180,
-	// TODO(done)
 	/**
-	 * rotation for tiles 270°
+	 * rotation for tiles 270ï¿½
 	 */
 	ROTATION_270;
 }
