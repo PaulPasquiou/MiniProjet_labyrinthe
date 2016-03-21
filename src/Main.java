@@ -14,6 +14,7 @@ public class Main
      */
     public static void main(String[] args)
     {
-        new MazeGame().play();
+    	int nbPlayer = 2;
+        new MazeGame(nbPlayer).play();
     }
 }

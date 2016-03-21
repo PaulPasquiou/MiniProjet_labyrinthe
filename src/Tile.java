@@ -1,34 +1,36 @@
 // TODO clean comment (not really clear)
 /**
- * it represents tiles, it's featured by a shape, a rotation and an eventual
- * item
+ * it represents tiles, 
+ * it's featured by a shape, 
+ * a rotation
+ * and an eventual item
  * 
  * @author pasquiop
  */
 public class Tile
 {
 
-    // TODO fix comment (ask for advice)
+    // TODO fix comment (ask for advice)(done)
     /**
-     * attribute which gives us the shape of the tile
+     * gives us the shape of the tile
      */
     private Shape shape;
 
-    // TODO fix comment (ask for advice)
+    // TODO fix comment (ask for advice)(done)
     /**
-     * attribute which gives us the id of items on the tile
+     * gives us the id of items on the tile
      */
     private Treasure item;
 
-    // TODO fix comment (ask for advice)
+    // TODO fix comment (ask for advice)(done)
     /**
-     * attribute which gives us the orientation of the tile
+     * gives us the orientation of the tile
      */
     private Rotation rotation;
 
-    // TODO detail comment (how is the created tile)
+    // TODO detail comment (how is the created tile) (done)
     /**
-     * create a new Tile
+     * create a new Tile with features passed in arguments
      * 
      * @param shape0
      *            the shape of the tile

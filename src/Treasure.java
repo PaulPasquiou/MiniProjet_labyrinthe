@@ -8,6 +8,7 @@ public enum Treasure
 	/**
 	 * 
 	 */
+	NONE,
     PLAYER,
 	BOOK,
 	PURSE,
