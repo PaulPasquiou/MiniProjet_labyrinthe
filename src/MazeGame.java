@@ -12,16 +12,24 @@ public class MazeGame
 	private Board board;
 	
 	// TODO write comment
+	/**
+	 * 
+	 */
 	private Player[] player;
 
 	/**
 	 * create a new game, ready to be played (the board is ready, pieces are
 	 * placed, cards are distributed, players are ready)
+	 * @param nbPlayer0 is the number of player
 	 */
 	public MazeGame(int nbPlayer0)
 	{
 		this.board = new Board();
 		this.player = new Player[nbPlayer0];
+		for (int i=0;i < nbPlayer0 ;i++)
+		{
+			this.player[i]= new Player(,new Treasure[] )
+		}
 	}
 
 	/**
@@ -40,28 +48,30 @@ public class MazeGame
 		boolean finished=false;
 		
 		// TODO rename variable (not compliant with cc)
-		int CurrentPlayer = 0;
+		int currentPlayer = 0;
+		
 		
 		System.out.println("La partie commence.");
 		/*choix pions*/
-		while(this.finished==false)
+		while (!finished)
 		{
-			do
-			{
-				/*ask current player his move*/
-			}while(/*wwrong move*/);
+			//do
+			//{
+			//	/*ask current player his move*/
+			//}while(); /*wrong move*/
 			
-			if (player[CurrentPlayer].getNbObjectives()==0)
+			/*move player*/
+			if (this.player[currentPlayer].getNbObjectives()==0)
 			{
-				this.finished=true;
-				Player winner=player[CurrentPlayer];
+				finished=true;
+				Player winner=this.player[currentPlayer];
 			}
 			else
-				 CurrentPlayer += 1;
-			if(CurrentPlayer==player.length+1) CurrentPlayer=0;
+				 currentPlayer += 1;
+			if(currentPlayer==this.player.length+1) currentPlayer=0;
 		}
 		System.out.println(this.board.toString());
 		System.out.println("La partie est finie.");
-		return player[CurrentPlayer];
+		return this.player[currentPlayer];
 	}
 }

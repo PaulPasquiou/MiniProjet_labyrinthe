@@ -1,14 +1,12 @@
-// TODO fix comment
+// TODO fix comment(done)
 /**
+ * All the treasure players have to reach.
  * @author pasquiop
  *
  */
 public enum Treasure
 {
-	//TODO complete the list....
-	/**
-	 * 
-	 */
+	//TODO complete the list....(done)
 	NONE,
     PLAYER,
 	BOOK,
@@ -22,7 +20,19 @@ public enum Treasure
 	EMERALD,
 	SWORD,
 	CANDELS,
-	HELMET;
+	HELMET,
+	SPIDER,
+	BEETLE,
+	BAT,
+	BUTTERFLY,
+	SALAMENDER,
+	CHAMELEON,
+	GHOST,
+	RAT,
+	PRINCESS,
+	OWL,
+	PIG,
+	CHAINED_GHOST;
 	
 	
 

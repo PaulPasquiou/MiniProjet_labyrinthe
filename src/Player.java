@@ -1,29 +1,46 @@
-// TODO write comment
+// TODO write comment(done)
+/**
+ * A player of the labyrinth game. Featured by a color and an array of objectives.
+ * @author pasquiop
+ * 
+ */
 public class Player
 {
-	// TODO write comment
-	private final Color color;
-	
-	// TODO write comment
-	private Treasure[] objectives;
-	
-	// TODO fix comment
+	// TODO write comment(done)
 	/**
-	 * @param color0
-	 * 	the color of the Player who is going to be created
-	 * @param objectives0
-	 * 	all the treasure cards the player have to search
+	 * The color of the player
 	 */
-	public Player(Color color0,Treasure[] objectives0)
+	private final Color color;
+
+	// TODO write comment(done)
+	/**
+	 * the array of objectives of the player (ie : items the player has to look for)
+	 */
+	private Treasure[] objectives;
+
+	// TODO fix comment(done)
+	/**
+	 * create new player with a color and an array of objectives
+	 * 
+	 * @param color0
+	 *            the color of the Player who is going to be created
+	 * @param objectives0
+	 *            all the treasure cards the player have to search
+	 */
+	public Player(Color color0, Treasure[] objectives0)
 	{
-		this.color=color0;
-		this.objectives=objectives0;
+		this.color = color0;
+		this.objectives = objectives0;
 	}
-	
-	// TODO write comment
-	// TODO use this.
+
+	/**
+	 * give the remaining number of objectives 
+	 * @return the remaining number of objectives 
+	 */
+	// TODO write comment(done)
+	// TODO use this.(done)
 	public int getNbObjectives()
 	{
-		return objectives.length;
+		return this.objectives.length;
 	}
 }

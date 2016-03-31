@@ -1,29 +1,17 @@
 /**
  * it represents tiles, 
- * it's featured by a shape, 
- * a rotation
- * and an eventual item
+ * it's featured by a rotation, 
+ * inherit the shape and the treasure from FinalTile
  * 
  * @author pasquiop
  */
-public class Tile
+public class Tile extends FinalTile
 {
-
-    /**
-     * tile's shape
-     */
-    private Shape shape;
-
-    /**
-     * Treasure on the tile (<tt>null</tt> means no treasure)
-     */
-    private Treasure item;
-
- 
     /**
      * tile's rotation
      */
     private Rotation rotation;
+    private FinalTile tile;
     
     /**
      * create a new Tile with features passed in arguments
@@ -37,13 +25,13 @@ public class Tile
      */
     public Tile(Shape shape0, Treasure item0, Rotation rotation0)
     {
-        this.shape = shape0;
-        this.item = item0;
+    	new FinalTile
+        
         this.rotation = rotation0;
     }
 
     public String toString()
     {
-        return "(" + this.shape + "," + this.rotation + "," + this.item + ")";
+        return "(" + super.getShape() + "," + super.getItem() + "," + this.rotation + ")";
     }
 }
