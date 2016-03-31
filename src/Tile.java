@@ -1,4 +1,3 @@
-// TODO clean comment (not really clear)
 /**
  * it represents tiles, 
  * it's featured by a shape, 
@@ -10,25 +9,22 @@
 public class Tile
 {
 
-    // TODO fix comment (ask for advice)(done)
     /**
-     * gives us the shape of the tile
+     * tile's shape
      */
     private Shape shape;
 
-    // TODO fix comment (ask for advice)(done)
     /**
-     * gives us the id of items on the tile
+     * Treasure on the tile (<tt>null</tt> means no treasure)
      */
     private Treasure item;
 
-    // TODO fix comment (ask for advice)(done)
+ 
     /**
-     * gives us the orientation of the tile
+     * tile's rotation
      */
     private Rotation rotation;
-
-    // TODO detail comment (how is the created tile) (done)
+    
     /**
      * create a new Tile with features passed in arguments
      * 

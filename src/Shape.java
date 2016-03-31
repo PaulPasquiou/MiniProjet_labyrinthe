@@ -1,4 +1,4 @@
-
+// TODO write comment
 public enum Shape
 {
 	// TODO fix comment (ask for advice)

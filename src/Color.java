@@ -1,6 +1,6 @@
 /**
  * @author pasquiop
- *	All the color that can be choose by the player
+ *	All the color that can be chosen by the player
  *	All players must have a different color.
  */
 public enum Color

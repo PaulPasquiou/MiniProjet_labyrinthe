@@ -10,6 +10,7 @@ public class Board
 	 * number of columns
 	 */
 	private static final int NB_COLUMNS = 7;
+	
 	/**
 	 * number of rows
 	 */

@@ -10,9 +10,10 @@ public class MazeGame
 	 * the game board
 	 */
 	private Board board;
+	
+	// TODO write comment
 	private Player[] player;
 
-	// TODO detail comment (how pieces ares placed?)
 	/**
 	 * create a new game, ready to be played (the board is ready, pieces are
 	 * placed, cards are distributed, players are ready)
@@ -23,7 +24,6 @@ public class MazeGame
 		this.player = new Player[nbPlayer0];
 	}
 
-	// TODO detail algorithm (ask for advice)
 	/**
 	 * Play the game. 
 	 * while (<game is not over>) 
@@ -38,6 +38,8 @@ public class MazeGame
 	public Player play()
 	{
 		boolean finished=false;
+		
+		// TODO rename variable (not compliant with cc)
 		int CurrentPlayer = 0;
 		
 		System.out.println("La partie commence.");
