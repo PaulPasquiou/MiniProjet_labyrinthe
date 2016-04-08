@@ -5,12 +5,11 @@
  */
 public class MazeGame
 {
-
 	/**
 	 * the game board
 	 */
 	private Board board;
-	
+
 	// TODO write comment
 	/**
 	 * 
@@ -33,42 +32,37 @@ public class MazeGame
 	}
 
 	/**
-	 * Play the game. 
-	 * while (<game is not over>) 
-	 * 	do
-	 * 	 <ask current player his move tile> 
-	 * 	while(<move is not valid>) 
-	 * 	<move row/column>
-	 * 	increment current player
-	 * @return 
-	 * 	return the player who won the game.
+	 * Play the game. while (<game is not over>) do <ask current player his move
+	 * tile> while(<move is not valid>) <move row/column> increment current
+	 * player
+	 * 
+	 * @return return the player who won the game.
 	 */
 	public Player play()
 	{
-		boolean finished=false;
-		
-		// TODO rename variable (not compliant with cc)
+		boolean finished = false;
+
 		int currentPlayer = 0;
-		
-		
+
 		System.out.println("La partie commence.");
-		/*choix pions*/
+		/* choix pions */
 		while (!finished)
 		{
-			//do
-			//{
-			//	/*ask current player his move*/
-			//}while(); /*wrong move*/
-			
-			/*move player*/
-			if (this.player[currentPlayer].getNbObjectives()==0)
+			// do
+			// {
+			// /*ask current player his move*/
+			// }while(); /*wrong move*/
+
+			/* move player */
+			if (this.player[currentPlayer].getNbObjectives() == 0)
 			{
-				finished=true;
-				Player winner=this.player[currentPlayer];
+				finished = true;
+				Player winner = this.player[currentPlayer];
 			}
 			else
-				 currentPlayer += 1;
-			if(currentPlayer==this.player.length+1) currentPlayer=0;
+				currentPlayer += 1;
+			if (currentPlayer == this.player.length + 1)
+				currentPlayer = 0;
 		}
 		System.out.println(this.board.toString());
 		System.out.println("La partie est finie.");

@@ -1,6 +1,8 @@
 // TODO write comment(done)
 /**
- * A player of the labyrinth game. Featured by a color and an array of objectives.
+ * A player of the labyrinth game. Featured by a color and an array of
+ * objectives.
+ * 
  * @author pasquiop
  * 
  */
@@ -14,7 +16,8 @@ public class Player
 
 	// TODO write comment(done)
 	/**
-	 * the array of objectives of the player (ie : items the player has to look for)
+	 * the array of objectives of the player (ie : items the player has to look
+	 * for)
 	 */
 	private Treasure[] objectives;
 
@@ -34,8 +37,9 @@ public class Player
 	}
 
 	/**
-	 * give the remaining number of objectives 
-	 * @return the remaining number of objectives 
+	 * give the remaining number of objectives
+	 * 
+	 * @return the remaining number of objectives
 	 */
 	// TODO write comment(done)
 	// TODO use this.(done)
