@@ -1,4 +1,9 @@
-// TODO write comment
+// TODO write comment(done)
+/**
+ * all the shape that a tile can have
+ * @author pasquiop
+ *
+ */
 public enum Shape
 {
 

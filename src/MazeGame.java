@@ -10,9 +10,9 @@ public class MazeGame
 	 */
 	private Board board;
 
-	// TODO write comment
+	// TODO write comment(done)
 	/**
-	 * 
+	 * contains all the player of the game
 	 */
 	private Player[] player;
 
@@ -27,7 +27,7 @@ public class MazeGame
 		this.player = new Player[nbPlayer0];
 		for (int i=0;i < nbPlayer0 ;i++)
 		{
-			this.player[i]= new Player(,new Treasure[] )
+			//this.player[i]= new Player(,new Treasure[] )
 		}
 	}
 

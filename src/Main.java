@@ -16,5 +16,6 @@ public class Main
 	{
 		int nbPlayer = 2;
 		new MazeGame(nbPlayer).play();
+		Color.values();
 	}
 }

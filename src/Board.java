@@ -26,6 +26,14 @@ public class Board
 	 */
 	public Board()
 	{
+		//Créer une strucuture de données de type MAP qui contient les tuiles fixes
+		//à leurs emplacements et la compléter avec la liste suivante
+		
+		//Créer une liste qui contient toutes les tuiles mobiles avec une rotation aléatoire
+		//Mélanger les éléments de cette liste
+		//Prendre la tuile en tete de liste a chaque default
+		
+		
 		this.board = new Tile[NB_ROWS][NB_COLUMNS];
 		for (int row = 0; row < NB_ROWS; row++)
 		{
@@ -37,19 +45,19 @@ public class Board
 					switch (column)
 					{
 					case 0:
-						this.board[row][column] = new Tile(Shape.L_SHAPE, Treasure.PLAYER, Rotation.ROTATION_90);
+						this.board[row][column] = new Tile(Face.YELLOW_FACE, Rotation.ROTATION_90);
 						break;
 					case 2:
-						this.board[row][column] = new Tile(Shape.T_SHAPE, Treasure.BOOK, Rotation.ROTATION_0);
+						this.board[row][column] = new Tile(Face.BOOK_FACE, Rotation.ROTATION_0);
 						break;
 					case 4:
-						this.board[row][column] = new Tile(Shape.T_SHAPE, Treasure.PURSE, Rotation.ROTATION_0);
+						this.board[row][column] = new Tile(Face.PURSE_FACE, Rotation.ROTATION_0);
 						break;
 					case 6:
-						this.board[row][column] = new Tile(Shape.L_SHAPE, Treasure.PLAYER, Rotation.ROTATION_180);
+						this.board[row][column] = new Tile(Face.RED_FACE, Rotation.ROTATION_180);
 						break;
 					default:
-						this.board[row][column] = new Tile(Shape.L_SHAPE, Treasure.NONE, Rotation.ROTATION_0);
+						//this.board[row][column] = ;
 						break;
 					}
 					break;
@@ -57,19 +65,19 @@ public class Board
 					switch (column)
 					{
 					case 0:
-						this.board[row][column] = new Tile(Shape.T_SHAPE, Treasure.MAP, Rotation.ROTATION_270);
+						this.board[row][column] = new Tile(Face.MAP_FACE, Rotation.ROTATION_270);
 						break;
 					case 2:
-						this.board[row][column] = new Tile(Shape.T_SHAPE, Treasure.CROWN, Rotation.ROTATION_270);
+						this.board[row][column] = new Tile(Face.CROWN_FACE, Rotation.ROTATION_270);
 						break;
 					case 4:
-						this.board[row][column] = new Tile(Shape.T_SHAPE, Treasure.KEYS, Rotation.ROTATION_0);
+						this.board[row][column] = new Tile(Face.KEYS_FACE, Rotation.ROTATION_0);
 						break;
 					case 6:
-						this.board[row][column] = new Tile(Shape.T_SHAPE, Treasure.SKULL, Rotation.ROTATION_0);
+						this.board[row][column] = new Tile(Face.SKULL_FACE, Rotation.ROTATION_0);
 						break;
 					default:
-						this.board[row][column] = new Tile(Shape.L_SHAPE, Treasure.NONE, Rotation.ROTATION_0);
+						//this.board[row][column] = new Tile(Shape.L_SHAPE, Treasure.NONE, Rotation.ROTATION_0);
 						break;
 					}
 					break;
@@ -77,19 +85,19 @@ public class Board
 					switch (column)
 					{
 					case 0:
-						this.board[row][column] = new Tile(Shape.T_SHAPE, Treasure.RING, Rotation.ROTATION_270);
+						this.board[row][column] = new Tile(Face.RING_FACE, Rotation.ROTATION_270);
 						break;
 					case 2:
-						this.board[row][column] = new Tile(Shape.T_SHAPE, Treasure.CHEST, Rotation.ROTATION_180);
+						this.board[row][column] = new Tile(Face.CHEST_FACE, Rotation.ROTATION_180);
 						break;
 					case 4:
-						this.board[row][column] = new Tile(Shape.T_SHAPE, Treasure.EMERALD, Rotation.ROTATION_90);
+						this.board[row][column] = new Tile(Face.EMERALD_FACE, Rotation.ROTATION_90);
 						break;
 					case 6:
-						this.board[row][column] = new Tile(Shape.T_SHAPE, Treasure.SWORD, Rotation.ROTATION_90);
+						this.board[row][column] = new Tile(Face.SWORD_FACE, Rotation.ROTATION_90);
 						break;
 					default:
-						this.board[row][column] = new Tile(Shape.L_SHAPE, Treasure.NONE, Rotation.ROTATION_0);
+						//this.board[row][column] = new Tile(Shape.L_SHAPE, Treasure.NONE, Rotation.ROTATION_0);
 						break;
 					}
 					break;
@@ -97,24 +105,24 @@ public class Board
 					switch (column)
 					{
 					case 0:
-						this.board[row][column] = new Tile(Shape.L_SHAPE, Treasure.PLAYER, Rotation.ROTATION_0);
+						this.board[row][column] = new Tile(Face.GREEN_FACE, Rotation.ROTATION_0);
 						break;
 					case 2:
-						this.board[row][column] = new Tile(Shape.T_SHAPE, Treasure.CANDELS, Rotation.ROTATION_180);
+						this.board[row][column] = new Tile(Face.CANDELS_FACE, Rotation.ROTATION_180);
 						break;
 					case 4:
-						this.board[row][column] = new Tile(Shape.T_SHAPE, Treasure.HELMET, Rotation.ROTATION_180);
+						this.board[row][column] = new Tile(Face.HELMET_FACE, Rotation.ROTATION_180);
 						break;
 					case 6:
-						this.board[row][column] = new Tile(Shape.L_SHAPE, Treasure.PLAYER, Rotation.ROTATION_270);
+						this.board[row][column] = new Tile(Face.BLUE_FACE, Rotation.ROTATION_270);
 						break;
 					default:
-						this.board[row][column] = new Tile(Shape.L_SHAPE, Treasure.NONE, Rotation.ROTATION_0);
+						//this.board[row][column] = new Tile(Shape.L_SHAPE, Treasure.NONE, Rotation.ROTATION_0);
 						break;
 					}
 					break;
 				default:
-					this.board[row][column] = new Tile(Shape.L_SHAPE, Treasure.NONE, Rotation.ROTATION_0);
+					//this.board[row][column] = new Tile(Shape.L_SHAPE, Treasure.NONE, Rotation.ROTATION_0);
 					break;
 				}
 			}
