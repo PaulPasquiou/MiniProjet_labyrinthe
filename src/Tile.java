@@ -29,6 +29,11 @@ public class Tile
 		this.tile = tile0;
 		this.rotation = rotation0;
 	}
+	
+	public void rotate(Rotation rot)
+	{
+		this.rotation=rot;
+	}
 
 	public String toString()
 	{
