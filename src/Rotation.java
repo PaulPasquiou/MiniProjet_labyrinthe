@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * enum of all rotation available
  * 
@@ -19,4 +21,13 @@ public enum Rotation
 					 * rotation for tiles 270 degres
 					 */
 	ROTATION_270;
+	
+	/**
+	 * give a random rotation
+	 * @return the random rotation
+	 */
+	public static Rotation randomRotation()
+	{
+		return Rotation.values()[new Random().nextInt(Rotation.values().length)];
+	}
 }

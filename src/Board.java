@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Board
 {
@@ -26,7 +27,15 @@ public class Board
 	 * (array) containing the tiles [row][column]
 	 */
 	private Tile[][] board;
+
+	/**
+	 * the remaining tile which is use to push raw or column
+	 */
+	private Tile pushingTile;
 	
+	/**
+	 * all fixed tiles
+	 */
 	private static final Map<Position, Tile> fixedTiles;
     static
     {
@@ -52,22 +61,13 @@ public class Board
     	fixedTiles.put(new Position(6,6), new Tile(Face.BLUE_FACE, Rotation.ROTATION_270));
     }
     
-
 	/**
 	 * create a new default board, where mobile cards are placed randomly
 	 */
 	public Board()
 	{
-		
-		//Créer une liste qui contient toutes les tuiles mobiles avec une rotation aléatoire
-		//Mélanger les éléments de cette liste
-		//Prendre la tuile en tete de liste a chaque default
-		
-	    private List<Tile> movableTiles = new ArrayList();
-	    movableTiles.add(new Tile());
-	    //creer toutes les tuiles qui peuvent bouger avec une rotation de 0
-	    //mélanger la liste
-		
+		List<Tile> movableTiles = new ArrayList<Tile>();
+		movableTile(movableTiles);
 		this.board = new Tile[NB_ROWS][NB_COLUMNS];
 		for (int row = 0; row < NB_ROWS; row++)
 		{
@@ -75,15 +75,32 @@ public class Board
 			{
 				Tile toInsert = fixedTiles.get(new Position(column, row));
 				if(toInsert != null)
-				{
 					this.board[row][column]=toInsert;
-				}
 				else
-				{
-					//mettre une tuile de la liste movable, faire une rotation aleatoire (avec methode rotate)
-				}
+					this.board[row][column] = movableTiles.remove(0);
 			}
 		}
+		this.pushingTile=movableTiles.remove(0);
+	}
+	
+	/**
+	 * Fill the list of movable tile and shuffle it.
+	 * @param listMovable the list going to be filled and shuffled
+	 */
+	private static void movableTile(List<Tile> listMovable)
+	{
+		//TODO remplir la liste
+	    listMovable.add(new MovableTile(Face.I_FACE1));
+	    Collections.shuffle(listMovable);
+	}
+	
+	/**
+	 * Give the remaining tile
+	 * @return the remaining tile
+	 */
+	public Tile getPushingTile()
+	{
+		return this.pushingTile;
 	}
 
 	/**

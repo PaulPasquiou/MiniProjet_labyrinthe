@@ -57,7 +57,6 @@ public class MazeGame
 			if (this.player[currentPlayer].getNbObjectives() == 0)
 			{
 				finished = true;
-				Player winner = this.player[currentPlayer];
 			}
 			else
 				currentPlayer += 1;

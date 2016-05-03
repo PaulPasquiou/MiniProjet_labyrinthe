@@ -1,6 +1,7 @@
 /**
  * it represents tiles, it's featured by a rotation, inherit the shape and the
- * treasure from FinalTile
+ * treasure from Face
+ * This tiles can not change their rotation.
  * 
  * @author pasquiop
  */
@@ -9,13 +10,13 @@ public class Tile
 	/**
 	 * tile's rotation
 	 */
-	private Rotation rotation;
+	protected Rotation rotation;
 
 	// TODO write comment(done)
 	/**
 	 * the shape and the item of the tile
 	 */
-	private Face tile;
+	protected Face tile;
 
 	/**
 	 * create a new Tile with features passed in arguments
@@ -29,12 +30,10 @@ public class Tile
 		this.tile = tile0;
 		this.rotation = rotation0;
 	}
+	//transformer Tile en classe servant uniquement pour les tuiles fixe
+	//créer une sous classe de tuile qui servira pour les tuiles pouvant bouger
+	//et donc ayant une rotation pouvant changer
 	
-	public void rotate(Rotation rot)
-	{
-		this.rotation=rot;
-	}
-
 	public String toString()
 	{
 		return "(" + this.tile.getShape() + "," + this.tile.getItem() + "," + this.rotation + ")";
