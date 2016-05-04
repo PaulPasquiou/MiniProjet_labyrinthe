@@ -89,8 +89,44 @@ public class Board
 	 */
 	private static void movableTile(List<Tile> listMovable)
 	{
-		//TODO remplir la liste
 	    listMovable.add(new MovableTile(Face.I_FACE1));
+	    listMovable.add(new MovableTile(Face.I_FACE2));
+	    listMovable.add(new MovableTile(Face.I_FACE3));
+	    listMovable.add(new MovableTile(Face.I_FACE4));
+	    listMovable.add(new MovableTile(Face.I_FACE5));
+	    listMovable.add(new MovableTile(Face.I_FACE6));
+	    listMovable.add(new MovableTile(Face.I_FACE7));
+	    listMovable.add(new MovableTile(Face.I_FACE8));
+	    listMovable.add(new MovableTile(Face.I_FACE9));
+	    listMovable.add(new MovableTile(Face.I_FACE10));
+	    listMovable.add(new MovableTile(Face.I_FACE11));
+	    listMovable.add(new MovableTile(Face.I_FACE12));
+	    
+	    listMovable.add(new MovableTile(Face.L_FACE1));
+	    listMovable.add(new MovableTile(Face.L_FACE2));
+	    listMovable.add(new MovableTile(Face.L_FACE3));
+	    listMovable.add(new MovableTile(Face.L_FACE4));
+	    listMovable.add(new MovableTile(Face.L_FACE5));
+	    listMovable.add(new MovableTile(Face.L_FACE6));
+	    listMovable.add(new MovableTile(Face.L_FACE7));
+	    listMovable.add(new MovableTile(Face.L_FACE8));
+	    listMovable.add(new MovableTile(Face.L_FACE9));
+	    listMovable.add(new MovableTile(Face.L_FACE10));
+	    
+	    listMovable.add(new MovableTile(Face.SPIDER_FACE));
+	    listMovable.add(new MovableTile(Face.BEETLE_FACE));
+	    listMovable.add(new MovableTile(Face.BUTTERFLY_FACE));
+	    listMovable.add(new MovableTile(Face.SALAMENDER_FACE));
+	    listMovable.add(new MovableTile(Face.RAT_FACE));
+	    listMovable.add(new MovableTile(Face.OWL_FACE));
+	    
+	    listMovable.add(new MovableTile(Face.BAT_FACE));
+	    listMovable.add(new MovableTile(Face.CHAMELEON_FACE));
+	    listMovable.add(new MovableTile(Face.PIG_FACE));
+	    listMovable.add(new MovableTile(Face.CHAINED_GHOST_FACE));
+	    listMovable.add(new MovableTile(Face.PRINCESS_FACE));
+	    listMovable.add(new MovableTile(Face.GHOST_FACE));
+	 
 	    Collections.shuffle(listMovable);
 	}
 	
