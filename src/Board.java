@@ -153,6 +153,7 @@ public class Board
 			}
 			result += "\n";
 		}
-		return result;
+		
+		return result+this.pushingTile.toString();
 	}
 }

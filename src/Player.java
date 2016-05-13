@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 // TODO write comment(done)
 /**
  * A player of the labyrinth game. Featured by a color and an array of
@@ -46,5 +48,16 @@ public class Player
 	public int getNbObjectives()
 	{
 		return this.objectives.length;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Player [color=" + color + ", objectives=" + Arrays.toString(objectives) + "]";
+	}
+
+	public Color getColor()
+	{
+		return color;
 	}
 }
