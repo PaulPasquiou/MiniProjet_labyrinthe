@@ -92,9 +92,9 @@ public class MazeGame
 	    Collections.shuffle(objectives);
 	}
 	
-	public boolean checkPush(PositionAndRotation par0)
+	public Direction directionToPush(PositionAndRotation par0)
 	{
-		return true;
+		return Board.getDirectiontopush().get(par0.getPosition());
 	}
 	
 	private boolean checkMove(Position destination, int currentPlayer)
@@ -125,12 +125,18 @@ public class MazeGame
 		while (!finished)
 		{
 			Position destination;
-			PositionAndRotation pushedTile;
+			PositionAndRotation parTile;
+			System.out.println(this.board.toString());
+			Direction directionToPush;
 			do
 			{
-				pushedTile = information[currentPlayer].askPush();
-			}while(this.checkPush(pushedTile)); //wrong move
+				parTile = information[currentPlayer].askPush();
+				directionToPush=this.directionToPush(parTile);
+			}while(directionToPush==null); //wrong move
 			
+			this.board.pushTile(parTile,directionToPush);//push
+			
+			System.out.println(this.board.toString());
 			do
 			{
 				destination = information[currentPlayer].askMove();

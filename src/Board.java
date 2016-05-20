@@ -33,32 +33,54 @@ public class Board
 	 */
 	private Tile pushingTile;
 	
+	private static final Map<Position, Direction> DIRECTIONTOPUSH;
+    static
+    {
+    	DIRECTIONTOPUSH = new HashMap<Position, Direction>();
+    	getDirectiontopush().put(new Position(0,1), Direction.RIGHT);
+    	getDirectiontopush().put(new Position(0,3), Direction.RIGHT);
+    	getDirectiontopush().put(new Position(0,5), Direction.RIGHT);
+    	
+    	getDirectiontopush().put(new Position(6,1), Direction.LEFT);
+    	getDirectiontopush().put(new Position(6,3), Direction.LEFT);
+    	getDirectiontopush().put(new Position(6,5), Direction.LEFT);
+    	
+    	getDirectiontopush().put(new Position(1,0), Direction.DOWN);
+    	getDirectiontopush().put(new Position(3,0), Direction.DOWN);
+    	getDirectiontopush().put(new Position(5,0), Direction.DOWN);
+    	
+    	getDirectiontopush().put(new Position(1,6), Direction.UP);
+    	getDirectiontopush().put(new Position(3,6), Direction.UP);
+    	getDirectiontopush().put(new Position(5,6), Direction.UP);
+    }
+    
+	
 	/**
 	 * all fixed tiles
 	 */
-	private static final Map<Position, Tile> fixedTiles;
+	private static final Map<Position, Tile> FIXEDTILE;
     static
     {
-    	fixedTiles = new HashMap<Position, Tile>();
-    	fixedTiles.put(new Position(0,0), new Tile(Face.YELLOW_FACE, Rotation.ROTATION_90));
-    	fixedTiles.put(new Position(0,2), new Tile(Face.BOOK_FACE, Rotation.ROTATION_0));
-    	fixedTiles.put(new Position(0,4), new Tile(Face.PURSE_FACE, Rotation.ROTATION_0));
-    	fixedTiles.put(new Position(0,6), new Tile(Face.RED_FACE, Rotation.ROTATION_180));
+    	FIXEDTILE = new HashMap<Position, Tile>();
+    	FIXEDTILE.put(new Position(0,0), new Tile(Face.YELLOW_FACE, Rotation.ROTATION_90));
+    	FIXEDTILE.put(new Position(0,2), new Tile(Face.BOOK_FACE, Rotation.ROTATION_0));
+    	FIXEDTILE.put(new Position(0,4), new Tile(Face.PURSE_FACE, Rotation.ROTATION_0));
+    	FIXEDTILE.put(new Position(0,6), new Tile(Face.RED_FACE, Rotation.ROTATION_180));
     	
-    	fixedTiles.put(new Position(2,0), new Tile(Face.MAP_FACE, Rotation.ROTATION_270));
-    	fixedTiles.put(new Position(2,2), new Tile(Face.CROWN_FACE, Rotation.ROTATION_270));
-    	fixedTiles.put(new Position(2,4), new Tile(Face.KEYS_FACE, Rotation.ROTATION_0));
-    	fixedTiles.put(new Position(2,6), new Tile(Face.SKULL_FACE, Rotation.ROTATION_0));
+    	FIXEDTILE.put(new Position(2,0), new Tile(Face.MAP_FACE, Rotation.ROTATION_270));
+    	FIXEDTILE.put(new Position(2,2), new Tile(Face.CROWN_FACE, Rotation.ROTATION_270));
+    	FIXEDTILE.put(new Position(2,4), new Tile(Face.KEYS_FACE, Rotation.ROTATION_0));
+    	FIXEDTILE.put(new Position(2,6), new Tile(Face.SKULL_FACE, Rotation.ROTATION_0));
     	
-    	fixedTiles.put(new Position(4,0), new Tile(Face.RING_FACE, Rotation.ROTATION_270));
-    	fixedTiles.put(new Position(4,2), new Tile(Face.CHEST_FACE, Rotation.ROTATION_180));
-    	fixedTiles.put(new Position(4,4), new Tile(Face.EMERALD_FACE, Rotation.ROTATION_90));
-    	fixedTiles.put(new Position(4,6), new Tile(Face.SWORD_FACE, Rotation.ROTATION_90));
+    	FIXEDTILE.put(new Position(4,0), new Tile(Face.RING_FACE, Rotation.ROTATION_270));
+    	FIXEDTILE.put(new Position(4,2), new Tile(Face.CHEST_FACE, Rotation.ROTATION_180));
+    	FIXEDTILE.put(new Position(4,4), new Tile(Face.EMERALD_FACE, Rotation.ROTATION_90));
+    	FIXEDTILE.put(new Position(4,6), new Tile(Face.SWORD_FACE, Rotation.ROTATION_90));
     	
-    	fixedTiles.put(new Position(6,0), new Tile(Face.GREEN_FACE, Rotation.ROTATION_0));
-    	fixedTiles.put(new Position(6,2), new Tile(Face.CANDELS_FACE, Rotation.ROTATION_180));
-    	fixedTiles.put(new Position(6,4), new Tile(Face.HELMET_FACE, Rotation.ROTATION_180));
-    	fixedTiles.put(new Position(6,6), new Tile(Face.BLUE_FACE, Rotation.ROTATION_270));
+    	FIXEDTILE.put(new Position(6,0), new Tile(Face.GREEN_FACE, Rotation.ROTATION_0));
+    	FIXEDTILE.put(new Position(6,2), new Tile(Face.CANDELS_FACE, Rotation.ROTATION_180));
+    	FIXEDTILE.put(new Position(6,4), new Tile(Face.HELMET_FACE, Rotation.ROTATION_180));
+    	FIXEDTILE.put(new Position(6,6), new Tile(Face.BLUE_FACE, Rotation.ROTATION_270));
     }
     
 	/**
@@ -73,7 +95,7 @@ public class Board
 		{
 			for (int column = 0; column < NB_COLUMNS; column++)
 			{
-				Tile toInsert = fixedTiles.get(new Position(column, row));
+				Tile toInsert = FIXEDTILE.get(new Position(column, row));
 				if(toInsert != null)
 					this.board[row][column]=toInsert;
 				else
@@ -155,5 +177,33 @@ public class Board
 		}
 		
 		return result+this.pushingTile.toString();
+	}
+
+	public void pushTile(PositionAndRotation parTile, Direction directionToPush)
+	{
+		int abs = parTile.getPosition().getAbscisse();
+		int ord = parTile.getPosition().getOrdonnee();
+		Rotation rot = parTile.getRotation();
+		Tile memoryTile = pushingTile;
+		Direction dirToPush;
+		//double boucle 
+		for(int i=0;i<7;i++)
+		{
+			memoryTile = replaceTile(parTile.getPosition(),memoryTile);
+		}
+		this.pushingTile=memoryTile;
+	}
+	
+	public Tile replaceTile(Position pos, Tile replaceTile)
+	{
+		Tile tileToReturn = this.board[pos.getAbscisse()][pos.getOrdonnee()];
+		this.board[pos.getAbscisse()][pos.getOrdonnee()]=replaceTile;
+		return tileToReturn;
+		
+	}
+
+	public static Map<Position, Direction> getDirectiontopush()
+	{
+		return DIRECTIONTOPUSH;
 	}
 }
