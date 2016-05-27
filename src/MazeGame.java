@@ -134,7 +134,7 @@ public class MazeGame
 				directionToPush=this.directionToPush(parTile);
 			}while(directionToPush==null); //wrong move
 			
-			this.board.pushTile(parTile,directionToPush);//push
+			this.board.pushTile(parTile);//push
 			
 			System.out.println(this.board.toString());
 			do

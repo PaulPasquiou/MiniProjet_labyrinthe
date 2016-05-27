@@ -1,23 +1,23 @@
 
 public class Position
 {
-	private int abscisse;
-	private int ordonnee;
+	private int row;
+	private int column;
 	
-	public Position(int abscisse0, int ordonnee0)
+	public Position(int row, int column)
 	{
-		this.abscisse = abscisse0;
-		this.ordonnee = ordonnee0;
+		this.row = row;
+		this.column = column;
 	}
 	
-	public int getAbscisse()
+	public int getRow()
 	{
-		return abscisse;
+		return row;
 	}
 	
-	public int getOrdonnee()
+	public int getColumn()
 	{
-		return ordonnee;
+		return column;
 	}
 
 	@Override
@@ -25,11 +25,21 @@ public class Position
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + abscisse;
-		result = prime * result + ordonnee;
+		result = prime * result + row;
+		result = prime * result + column;
 		return result;
 	}
 
+	/**
+	 * Give the positon next to the pushing tile in the given direction
+	 * @param direction
+	 * @return
+	 */
+	public Position neighbourPosition(Direction direction)
+	{
+		return new Position(this.row+direction.getDeltaRow(),this.column+direction.getDeltaColumn());
+	}
+	
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -40,9 +50,9 @@ public class Position
 		if (getClass() != obj.getClass())
 			return false;
 		Position other = (Position) obj;
-		if (this.abscisse != other.abscisse)
+		if (this.row != other.row)
 			return false;
-		if (this.ordonnee != other.ordonnee)
+		if (this.column != other.column)
 			return false;
 		return true;
 	}

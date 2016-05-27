@@ -31,27 +31,27 @@ public class Board
 	/**
 	 * the remaining tile which is use to push raw or column
 	 */
-	private Tile pushingTile;
+	private MovableTile pushingTile;
 	
 	private static final Map<Position, Direction> DIRECTIONTOPUSH;
     static
     {
     	DIRECTIONTOPUSH = new HashMap<Position, Direction>();
-    	getDirectiontopush().put(new Position(0,1), Direction.RIGHT);
-    	getDirectiontopush().put(new Position(0,3), Direction.RIGHT);
-    	getDirectiontopush().put(new Position(0,5), Direction.RIGHT);
+    	getDirectiontopush().put(new Position(0,1), Direction.DOWN);
+    	getDirectiontopush().put(new Position(0,3), Direction.DOWN);
+    	getDirectiontopush().put(new Position(0,5), Direction.DOWN);
     	
-    	getDirectiontopush().put(new Position(6,1), Direction.LEFT);
-    	getDirectiontopush().put(new Position(6,3), Direction.LEFT);
-    	getDirectiontopush().put(new Position(6,5), Direction.LEFT);
+    	getDirectiontopush().put(new Position(6,1), Direction.UP);
+    	getDirectiontopush().put(new Position(6,3), Direction.UP);
+    	getDirectiontopush().put(new Position(6,5), Direction.UP);
     	
-    	getDirectiontopush().put(new Position(1,0), Direction.DOWN);
-    	getDirectiontopush().put(new Position(3,0), Direction.DOWN);
-    	getDirectiontopush().put(new Position(5,0), Direction.DOWN);
+    	getDirectiontopush().put(new Position(1,0), Direction.RIGHT);
+    	getDirectiontopush().put(new Position(3,0), Direction.RIGHT);
+    	getDirectiontopush().put(new Position(5,0), Direction.RIGHT);
     	
-    	getDirectiontopush().put(new Position(1,6), Direction.UP);
-    	getDirectiontopush().put(new Position(3,6), Direction.UP);
-    	getDirectiontopush().put(new Position(5,6), Direction.UP);
+    	getDirectiontopush().put(new Position(1,6), Direction.LEFT);
+    	getDirectiontopush().put(new Position(3,6), Direction.LEFT);
+    	getDirectiontopush().put(new Position(5,6), Direction.LEFT);
     }
     
 	
@@ -95,14 +95,14 @@ public class Board
 		{
 			for (int column = 0; column < NB_COLUMNS; column++)
 			{
-				Tile toInsert = FIXEDTILE.get(new Position(column, row));
+				Tile toInsert = FIXEDTILE.get(new Position(row, column));
 				if(toInsert != null)
 					this.board[row][column]=toInsert;
 				else
 					this.board[row][column] = movableTiles.remove(0);
 			}
 		}
-		this.pushingTile=movableTiles.remove(0);
+		this.pushingTile=(MovableTile) movableTiles.remove(0);
 	}
 	
 	/**
@@ -179,25 +179,33 @@ public class Board
 		return result+this.pushingTile.toString();
 	}
 
-	public void pushTile(PositionAndRotation parTile, Direction directionToPush)
+	public void pushTile(PositionAndRotation parTile)
 	{
-		int abs = parTile.getPosition().getAbscisse();
-		int ord = parTile.getPosition().getOrdonnee();
-		Rotation rot = parTile.getRotation();
-		Tile memoryTile = pushingTile;
-		Direction dirToPush;
-		//double boucle 
-		for(int i=0;i<7;i++)
+		Direction direction = getDirectiontopush().get(parTile.getPosition());
+		Position position = parTile.getPosition();
+		pushingTile.rotate(parTile.getRotation());
+		MovableTile memoryTile = pushingTile;
+		while(true)
 		{
-			memoryTile = replaceTile(parTile.getPosition(),memoryTile);
+			memoryTile = replaceTile(position,memoryTile);
+			position = position.neighbourPosition(direction);
+			if (!isValidPosition(position)) break;
 		}
+		
+			
+		
 		this.pushingTile=memoryTile;
 	}
 	
-	public Tile replaceTile(Position pos, Tile replaceTile)
+	public boolean isValidPosition(Position position)
 	{
-		Tile tileToReturn = this.board[pos.getAbscisse()][pos.getOrdonnee()];
-		this.board[pos.getAbscisse()][pos.getOrdonnee()]=replaceTile;
+		return position.getRow()>=0 && position.getRow()<NB_ROWS && position.getColumn()>=0 && position.getColumn()<NB_COLUMNS;
+	}
+	
+	public MovableTile replaceTile(Position pos, MovableTile replaceTile)
+	{
+		MovableTile tileToReturn = (MovableTile) this.board[pos.getRow()][pos.getColumn()];
+		this.board[pos.getRow()][pos.getColumn()]=replaceTile;
 		return tileToReturn;
 		
 	}
